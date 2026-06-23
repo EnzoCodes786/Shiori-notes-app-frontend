@@ -1,0 +1,375 @@
+/* ─────────────────────────────────────────
+   BASE / RESET
+───────────────────────────────────────── */
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Serif JP", serif;
+}
+
+/* ─────────────────────────────────────────
+   DASHBOARD  (light / dark)
+───────────────────────────────────────── */
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background:
+        radial-gradient(circle at top right, rgba(255, 182, 193, 0.15), transparent 25%),
+        linear-gradient(135deg, #f7f2e8, #efe7d7, #e7dcc8);
+}
+
+.dashboard-dark {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background:
+        radial-gradient(circle at top right, rgba(120, 40, 40, 0.18), transparent 25%),
+        linear-gradient(135deg, #1a1410, #201810, #271e13);
+}
+
+/* ─────────────────────────────────────────
+   SIDEBAR  (light / dark)
+───────────────────────────────────────── */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 248, 240, 0.75);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(181, 155, 117, 0.25);
+}
+
+.sidebar-dark {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(28, 20, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(100, 75, 45, 0.35);
+}
+
+/* ─────────────────────────────────────────
+   LOGO  (light / dark)
+───────────────────────────────────────── */
+.logo {
+    font-size: 3rem;
+    color: #5c3b21;
+    text-align: center;
+}
+
+.logo-dark {
+    font-size: 3rem;
+    color: #e8c99a;
+    text-align: center;
+}
+
+/* ─────────────────────────────────────────
+   NAV MENU  (light / dark)
+───────────────────────────────────────── */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-menu-dark {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-menu button {
+    border: none;
+    background: transparent;
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #5c3b21;
+    transition: .3s;
+}
+
+.nav-menu button:hover {
+    background: rgba(183, 65, 65, .08);
+    transform: translateX(6px);
+}
+
+.nav-menu-dark button {
+    border: none;
+    background: transparent;
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #d4aa78;
+    transition: .3s;
+}
+
+.nav-menu-dark button:hover {
+    background: rgba(200, 90, 90, 0.12);
+    transform: translateX(6px);
+}
+
+/* ─────────────────────────────────────────
+   USER BOX  (light / dark)
+───────────────────────────────────────── */
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .35);
+}
+
+.user-box-dark {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─────────────────────────────────────────
+   USER AVATAR  (light / dark)
+───────────────────────────────────────── */
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b74141;
+    color: white;
+    font-weight: 600;
+}
+
+.user-avatar-dark {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8b2e2e;
+    color: #fde8e8;
+    font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+   USER INFO  (light / dark)
+───────────────────────────────────────── */
+.user-info h3 {
+    margin: 0;
+    color: #5c3b21;
+}
+
+.user-info p {
+    margin: 4px 0 0;
+    color: #8a7255;
+    font-size: .85rem;
+}
+
+.user-info-dark h3 {
+    margin: 0;
+    color: #e8c99a;
+}
+
+.user-info-dark p {
+    margin: 4px 0 0;
+    color: #8a7560;
+    font-size: .85rem;
+}
+
+/* ─────────────────────────────────────────
+   CONTENT AREA  (light / dark)
+───────────────────────────────────────── */
+.content {
+    flex: 1;
+    margin-left: 280px;
+    min-height: 100vh;
+}
+
+.content-dark {
+    flex: 1;
+    margin-left: 280px;
+    min-height: 100vh;
+    
+}
+
+/* ─────────────────────────────────────────
+   TOP BAR  (light / dark)
+───────────────────────────────────────── */
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.top-bar-dark {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(20, 14, 10, 0.55);
+}
+
+/* ─────────────────────────────────────────
+   SEARCH BOX  (light / dark)
+───────────────────────────────────────── */
+.search-box {
+    width: 420px;
+    height: 56px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .55);
+    color: #5c3b21;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px rgba(90, 70, 40, .08);
+}
+
+.search-box::placeholder {
+    color: #9a8265;
+}
+
+.search-box-dark {
+    width: 420px;
+    height: 56px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #e8c99a;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.search-box-dark::placeholder {
+    color: #6a5a45;
+}
+
+/* ─────────────────────────────────────────
+   NEW NOTE BUTTON  (light / dark)
+───────────────────────────────────────── */
+.new-note-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    padding: 0 26px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    background: linear-gradient(135deg, #c44e4e, #b74141);
+    color: #fff8f5;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 8px 18px rgba(183, 65, 65, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.new-note-link:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #d05a5a, #c44e4e);
+    box-shadow: 0 14px 26px rgba(183, 65, 65, 0.32);
+}
+
+.new-note-link:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(183, 65, 65, 0.22);
+}
+
+.new-note-link-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    padding: 0 26px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    background: linear-gradient(135deg, #8b2e2e, #7a2424);
+    color: #fde8e8;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 8px 18px rgba(100, 30, 30, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.new-note-link-dark:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #a03535, #8b2e2e);
+    box-shadow: 0 14px 26px rgba(100, 30, 30, 0.55);
+}
+
+.new-note-link-dark:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(100, 30, 30, 0.38);
+}
+
+/* ─────────────────────────────────────────
+   NOTES GRID  (light / dark)
+───────────────────────────────────────── */
+.notes-grid {
+    padding: 20px 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+    align-content: start;
+}
+
+.notes-grid-dark {
+    padding: 20px 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+    align-content: start;
+}

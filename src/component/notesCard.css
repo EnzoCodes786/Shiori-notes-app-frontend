@@ -1,0 +1,201 @@
+.main-body-card{
+    width:340px;
+    min-height:260px;
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:22px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #fffaf5,
+        #f7efe5
+    );
+
+    border:2px solid rgba(217,199,170,0.7);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+    box-shadow:
+    0 15px 35px rgba(90,70,40,0.12);
+}
+
+/* Hover */
+
+.main-body-card:hover{
+    transform:
+    translateY(-8px)
+    rotate(-1deg);
+
+    box-shadow:
+    0 25px 50px rgba(90,70,40,0.18);
+}
+
+/* Paper Texture */
+
+.main-body-card::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        rgba(90,70,40,0.04) 1px,
+        transparent 1px
+    );
+
+    background-size:18px 18px;
+
+    pointer-events:none;
+}
+
+/* Japanese Stamp */
+
+.main-body-card::after{
+    content:"志";
+
+    position:absolute;
+
+    right:18px;
+    bottom:12px;
+
+    font-size:3.8rem;
+
+    font-weight:700;
+
+    color:rgba(183,65,65,0.12);
+
+    pointer-events:none;
+}
+
+/* Action Bar */
+
+.action-keys{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:14px;
+}
+
+/* Delete Button */
+
+.delete{
+    width:38px;
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #c85656,
+        #a63f3f
+    );
+
+    color:white;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+    box-shadow:
+    0 8px 15px rgba(183,65,65,0.25);
+}
+
+.delete::before{
+    content:"✕";
+}
+
+.delete:hover{
+    transform:scale(1.08);
+
+    box-shadow:
+    0 12px 20px rgba(183,65,65,0.35);
+}
+
+/* Title */
+
+.title-box{
+    position:relative;
+
+    padding-left:24px;
+    padding-bottom:12px;
+
+    font-family:"Noto Serif JP", serif;
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    color:#5c3b21;
+
+    border-bottom:
+    2px solid rgba(181,155,117,0.25);
+}
+
+/* Sakura */
+
+.title-box::before{
+    content:"❀";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    color:#b74141;
+
+    font-size:1rem;
+}
+
+
+
+.note-preview-box{
+    flex:1;
+
+    margin-top:16px;
+
+    color:#6a5945;
+
+    line-height:1.9;
+
+    font-size:.95rem;
+
+    padding-top:6px;
+
+    background:
+    repeating-linear-gradient(
+        transparent,
+        transparent 30px,
+        rgba(181,155,117,0.12) 31px
+    );
+
+    overflow:hidden;
+}
+
+/* Demo Text */
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .main-body-card{
+        width:90%;
+        max-width:340px;
+    }
+
+}

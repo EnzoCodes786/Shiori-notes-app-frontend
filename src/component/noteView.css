@@ -1,0 +1,267 @@
+/* noteView.css */
+
+.note-view-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(60, 40, 30, 0.45);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  z-index: 1000;
+
+  animation: overlayFadeIn 0.25s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.note-view-card {
+  width: 700px;
+  max-width: 100%;
+  max-height: 85vh;
+
+  background: #faf7f2;
+
+  border: 1px solid #e4d7c2;
+  border-radius: 24px;
+
+  padding: 36px 40px;
+
+  box-shadow:
+    0 25px 60px rgba(120, 90, 60, 0.25),
+    0 4px 12px rgba(120, 90, 60, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: cardPopIn 0.3s ease;
+}
+
+@keyframes cardPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* top accent strip, matches the rest of the app */
+.note-view-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c44e4e, #e4a3a3, #c44e4e);
+}
+
+.note-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+  border-bottom: 2px solid #e4d7c2;
+  padding-bottom: 16px;
+}
+
+.note-view-title {
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #5b3d33;
+
+  margin: 0;
+  word-break: break-word;
+}
+
+.note-view-close {
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f0e6d6;
+  color: #8a6d56;
+
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.note-view-close:hover {
+  background: #e4d7c2;
+  color: #5b3d33;
+  transform: rotate(90deg);
+}
+
+.note-view-content {
+  flex: 1;
+  overflow-y: auto;
+
+  color: #5b3d33;
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  padding-right: 6px;
+}
+
+/* slim, themed scrollbar */
+.note-view-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.note-view-content::-webkit-scrollbar-thumb {
+  background: #e4d7c2;
+  border-radius: 10px;
+}
+
+.note-view-summary {
+  background: #fdf3e9;
+  border: 1px solid #e9d4b8;
+  border-left: 4px solid #c44e4e;
+  border-radius: 12px;
+
+  padding: 16px 20px;
+
+  animation: summaryFadeIn 0.3s ease;
+}
+
+@keyframes summaryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note-view-summary h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #c44e4e;
+}
+
+.note-view-summary p {
+  margin: 0;
+  color: #6d4c41;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.note-view-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+
+  padding-top: 8px;
+  border-top: 1px solid #f0e6d6;
+}
+
+.note-view-summarize-btn,
+.note-view-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50px;
+  padding: 0 24px;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-family: "Segoe UI", sans-serif;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.note-view-summarize-btn {
+  background: #f0e6d6;
+  color: #6d4c41;
+}
+
+.note-view-summarize-btn:hover:not(:disabled) {
+  background: #e4d7c2;
+  transform: translateY(-2px);
+}
+
+.note-view-delete-btn {
+  background: linear-gradient(135deg, #c44e4e, #b44343);
+  color: #fff8f5;
+  box-shadow: 0 8px 18px rgba(196, 78, 78, 0.2);
+}
+
+.note-view-delete-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d05a5a, #c44e4e);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(196, 78, 78, 0.3);
+}
+
+.note-view-summarize-btn:disabled,
+.note-view-delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .note-view-overlay {
+    padding: 16px;
+  }
+
+  .note-view-card {
+    padding: 24px 22px;
+    border-radius: 18px;
+  }
+
+  .note-view-title {
+    font-size: 1.3rem;
+  }
+
+  .note-view-actions {
+    flex-direction: column-reverse;
+  }
+
+  .note-view-summarize-btn,
+  .note-view-delete-btn {
+    width: 100%;
+  }
+}
