@@ -1,4 +1,4 @@
-import "./verifyOtp.css";
+import "./verifyOTP.css";
 import { useState } from "react";
 import axios from "axios";
 
